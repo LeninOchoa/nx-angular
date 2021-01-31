@@ -16,7 +16,5 @@
     }
   },
   "projects": {
-    "shell": { "tags": [] },
-    "shell-e2e": { "tags": [], "implicitDependencies": ["shell"] }
   }
 }
