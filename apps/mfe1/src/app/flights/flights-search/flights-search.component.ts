@@ -6,6 +6,7 @@ import {
   Injector,
   ComponentFactoryResolver,
 } from '@angular/core'
+import { AuthService } from '@she/auth-lib'
 
 @Component({
   selector: 'she-flights-search',
@@ -17,10 +18,12 @@ export class FlightsSearchComponent {
   viewContainer: ViewContainerRef
 
   constructor(
+    private authService: AuthService,
     @Inject(Injector) private injector,
     @Inject(ComponentFactoryResolver) private cfr
   ) {}
 
+  userName = this.authService.userName
   search() {
     alert('Not implemented for this demo!')
   }

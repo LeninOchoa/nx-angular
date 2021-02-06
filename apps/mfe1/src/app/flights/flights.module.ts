@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common'
 
 import { RouterModule } from '@angular/router';
 import { FLIGHTS_ROUTES } from './flights.routes';
-import { LazyComponent } from './lazy/lazy.component'
 import { FlightsSearchComponent } from './flights-search/flights-search.component'
+import { AuthLibModule } from '@she/auth-lib'
 
 @NgModule({
-  declarations: [LazyComponent, FlightsSearchComponent],
-  imports: [CommonModule, RouterModule.forChild(FLIGHTS_ROUTES)],
+  declarations: [FlightsSearchComponent],
+  imports: [CommonModule, AuthLibModule, RouterModule.forChild(FLIGHTS_ROUTES)],
 })
 export class FlightsModule {}

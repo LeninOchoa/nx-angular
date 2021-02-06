@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
   "cli": {
@@ -50,13 +49,8 @@
             "polyfills": "apps/shell/src/polyfills.ts",
             "tsConfig": "apps/shell/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/shell/src/favicon.ico",
-              "apps/shell/src/assets"
-            ],
-            "styles": [
-              "apps/shell/src/styles.css"
-            ],
+            "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
+            "styles": ["apps/shell/src/styles.css"],
             "scripts": [],
             "extraWebpackConfig": "apps/shell/webpack.config.js"
           },
@@ -122,9 +116,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/shell"
-          ],
+          "outputs": ["coverage/apps/shell"],
           "options": {
             "jestConfig": "apps/shell/jest.config.js",
             "passWithNoTests": true,
@@ -154,9 +146,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps\\shell-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps\\shell-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -176,13 +166,8 @@
             "polyfills": "apps/mfe1/src/polyfills.ts",
             "tsConfig": "apps/mfe1/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/mfe1/src/favicon.ico",
-              "apps/mfe1/src/assets"
-            ],
-            "styles": [
-              "apps/mfe1/src/styles.css"
-            ],
+            "assets": ["apps/mfe1/src/favicon.ico", "apps/mfe1/src/assets"],
+            "styles": ["apps/mfe1/src/styles.css"],
             "scripts": [],
             "extraWebpackConfig": "apps/mfe1/webpack.config.js"
           },
@@ -248,9 +233,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/mfe1"
-          ],
+          "outputs": ["coverage/apps/mfe1"],
           "options": {
             "jestConfig": "apps/mfe1/jest.config.js",
             "passWithNoTests": true,
@@ -280,9 +263,32 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps\\mfe1-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "auth-lib": {
+      "projectType": "library",
+      "root": "libs/auth-lib",
+      "sourceRoot": "libs/auth-lib/src",
+      "prefix": "she",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps\\mfe1-e2e/**/*.{js,ts}"
+              "libs/auth-lib/src/**/*.ts",
+              "libs/auth-lib/src/**/*.html"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth-lib"],
+          "options": {
+            "jestConfig": "libs/auth-lib/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
